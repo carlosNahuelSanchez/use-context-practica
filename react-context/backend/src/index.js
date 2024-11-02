@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import morgan from "morgan";
-import { router } from "./routes/user.routes";
+import { router } from "./routes/user.routes.js";
 
 const app = express();
 
@@ -16,9 +16,10 @@ app.use(
 app.use(express.json());
 app.use(morgan("dev"));
 
+app.use(router)
 
 
 
-app.listen(process.env.PORT, () => {
+app.listen(3000, () => {
     console.log("Server Running on port", 3000);
   });
